@@ -1,0 +1,42 @@
+[
+    {
+      "type": 1,
+      "title": "CUPS Airprint",
+      "name": "CUPS Airprint",
+      "description": "Airprint using CUPS",
+      "logo": "https://developer.apple.com/assets/elements/icons/airprint/airprint-96x96_2x.png",
+      "image": "chuckcharlie/cups-avahi-airprint:latest",
+      "note": "CUPS Airprint",
+      "categories": [
+        "System Tools"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [{
+        "WebUI": "631:631/tcp"
+      }],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "!config/cups-airprint/config"
+        },
+        {
+          "container": "/services",
+          "bind": "!config/cups-airprint/services"
+        }
+      ],
+      "env": [
+        {
+          "name": "CUPSADMIN",
+          "label": "CUPSADMIN",
+          "default": "admin",
+          "description": ""
+        },
+        {
+          "name": "CUPSPASSWORD",
+          "label": "CUPSPASSWORD",
+          "default": ""
+        }
+      ]
+    }
+]
