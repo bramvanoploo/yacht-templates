@@ -8,13 +8,11 @@
     "image": "chuckcharlie/cups-avahi-airprint:latest",
     "note": "CUPS Airprint",
     "categories": [
-      "System Tools"
+      "Tools:Utilities"
     ],
+    "network_mode": "host",
     "platform": "linux",
     "restart_policy": "unless-stopped",
-    "ports": [{
-      "WebUI": "631:631/tcp"
-    }],
     "volumes": [
       {
         "container": "/config",
